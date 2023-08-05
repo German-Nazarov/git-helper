@@ -372,14 +372,10 @@ Git хранит таблицу соответствий ```хеш → инфо�
 Схема типичного жизненного цикла файла в Git:
 
 ```mermaid
-sequenceDiagram
-    participant untracked
-    participant modified
-    participant staged(+tracked)
-    participant tracked
-    untracked->>staged(+tracked): git add
-    modifed->>staged(+tracked): git add
-    staged(+tracked)->>tracked: git commit
-    tracked->>modified: changes
+graph TD;
+    untracked -- "git add" --> staged
+    staged -- "git commit" --> tracked
+    modifed -- "git add" --> staged
+    tracked -- "изменения" --> modified
 
 ```
