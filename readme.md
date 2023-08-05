@@ -380,6 +380,6 @@ sequenceDiagram
     untracked->>staged(+tracked): git add
     modifed->>staged(+tracked): git add
     staged(+tracked)->>tracked: git commit
-    tracked->>modified: изменения
+    tracked->>modified: changes
 
 ```
